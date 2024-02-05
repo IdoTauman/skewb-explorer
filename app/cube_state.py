@@ -204,3 +204,77 @@ class CubeState:
                     temp_state[4][4],
                 ],
             ]
+
+    def move_U(self, reps):
+        temp_state = self.state.copy()
+        if reps == 1:
+            self.state = [
+                [
+                    temp_state[0][1],
+                    temp_state[0][3],
+                    temp_state[0][2],
+                    temp_state[0][0],
+                ],
+                [
+                    temp_state[1][0],
+                    temp_state[1][1],
+                    temp_state[1][2],
+                    temp_state[1][3],
+                ],
+                [
+                    (temp_state[2][0] + 2) % 3,
+                    (temp_state[2][1] + 2) % 3,
+                    (temp_state[2][2]) % 3,
+                    (temp_state[2][3] + 2) % 3,
+                ],
+                [
+                    (temp_state[3][0] + 1) % 3,
+                    (temp_state[3][1]) % 3,
+                    (temp_state[3][2]) % 3,
+                    (temp_state[3][3]) % 3,
+                ],
+                [
+                    temp_state[4][3],
+                    temp_state[4][1],
+                    temp_state[4][2],
+                    temp_state[4][4],
+                    temp_state[4][1],
+                    temp_state[4][5],
+                ],
+            ]
+
+        if reps == 2:
+            self.state = [
+                [
+                    temp_state[0][0],
+                    temp_state[0][3],
+                    temp_state[0][1],
+                    temp_state[0][2],
+                ],
+                [
+                    temp_state[1][0],
+                    temp_state[1][1],
+                    temp_state[1][2],
+                    temp_state[1][3],
+                ],
+                [
+                    (temp_state[2][0]) % 3,
+                    (temp_state[2][1] + 1) % 3,
+                    (temp_state[2][2] + 1) % 3,
+                    (temp_state[2][3] + 1) % 3,
+                ],
+                [
+                    (temp_state[3][0]) % 3,
+                    (temp_state[3][1]) % 3,
+                    (temp_state[3][2]) % 3,
+                    (temp_state[3][3] + 2) % 3,
+                ],
+                [
+                    temp_state[4][4],
+                    temp_state[4][1],
+                    temp_state[4][2],
+                    temp_state[4][1],
+                    temp_state[4][3],
+                    temp_state[4][5],
+                ],
+            ]
